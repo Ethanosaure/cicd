@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <script src="index.js"></script>
+    <title>Test Ci/Cd</title>
+  </head>
+  <body class="bg-white dark:bg-slate-800 flex items-center justify-center">
+    <div id="component" class="flex flex-col items-center justify-center">
+      <h1 class="text-3xl font-bold underline dark:text-white">
+        Que font les marionettes ?
+      </h1>
+      <p
+        class="border-4 border-red-500 border-solid p-5 mt-3 mb-10 dark:text-white"
+      >
+        Ainsi font font font, les petites marionnettes
+      </p>
+      <button
+        id="addText"
+        class="font-bold border-solid border-black border mb-10 p-2 dark:text-white dark:border-white"
+      >
+        Add next
+      </button>
+
+      <div id="generateText"></div>
+    </div>
+    <button
+      id="darkMode"
+      class="border border-solid border-purple-500 rounded-2xl bg- bg-purple-500 absolute right-0 top-10 p-2"
+    >
+      darkMode
+    </button>
+  </body>
+</html>
