@@ -1,25 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="output.css" />
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="src/index.js" type="module" defer></script>
     <title>Test Ci/Cd</title>
   </head>
-  <body class="bg-white dark:bg-slate-800 flex items-center justify-center">
+  <body class="flex items-center justify-center bg-white dark:bg-slate-800">
     <div id="component" class="flex flex-col items-center justify-center">
       <h1 class="text-3xl font-bold underline dark:text-white">
         Que font les marionettes ?
       </h1>
       <p
-        class="border-4 border-red-500 border-solid p-5 mt-3 mb-10 dark:text-white"
+        class="mb-10 mt-3 border-4 border-solid border-red-500 p-5 dark:text-white"
       >
         Ainsi font font font, les petites marionnettes
       </p>
       <button
         id="addText"
-        class="font-bold border-solid border-black border mb-10 p-2 dark:text-white dark:border-white"
+        class="mb-10 border border-solid border-black p-2 font-bold dark:border-white dark:text-white"
       >
         Add next
       </button>
@@ -28,7 +28,7 @@
     </div>
     <button
       id="darkMode"
-      class="border border-solid border-purple-500 rounded-2xl bg- bg-purple-500 absolute right-0 top-10 p-2"
+      class="absolute right-0 top-10 rounded-2xl border border-solid border-purple-500 bg-purple-500 p-2"
     >
       darkMode
     </button>

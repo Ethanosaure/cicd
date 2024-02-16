@@ -1,6 +1,16 @@
 {
+  "scripts": {
+    "dev:design": "npx tailwindcss -i ./src/style.css -o ./src/output.css --watch",
+    "dev:format": "prettier --write .",
+    "test": "vitest",
+    "design": "npx tailwindcss -i ./src/style.css -o dist/src/output.css",
+    "linter": "eslint --ignore-path .eslintignore --ext .js ."
+  },
   "devDependencies": {
-    "eslint": "^8.56.0"
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "vitest": "^1.2.2"
   },
   "dependencies": {
     "tailwindcss": "^3.4.1"

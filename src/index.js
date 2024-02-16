@@ -1,10 +1,13 @@
+import { generateText } from "./utils/generateText.js";
+
 document.addEventListener("DOMContentLoaded", function () {
-  const text = "3 ptits tours et puis s'en vont";
   const divText = document.getElementById("generateText");
   const addButton = document.getElementById("addText");
   const darkModeBtn = document.getElementById("darkMode");
   const html = document.querySelector("html");
   let darkMode = false;
+
+  let text = generateText("puis s'en vont");
 
   addButton.addEventListener("click", addText);
   darkModeBtn.addEventListener("click", triggerdarkMode);
