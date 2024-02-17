@@ -67,7 +67,7 @@ jobs:
         run: cp -r ./public/src ./dist/public
 
       - name: uploading artifacts
-        uses: actions/upload-pages-artifacts@v2
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./dist/
 
