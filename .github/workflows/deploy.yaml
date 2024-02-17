@@ -2,7 +2,8 @@ name: Deploy to github pages
 
 on:
   pull_request:
-    branches: -main
+    branches:
+      - main
 
   push:
     branches:
@@ -20,3 +21,12 @@ jobs:
         with:
           node-version: 18
           cache: "npm"
+
+      - name: install devDependencies
+        run: npm i
+
+      - name: linter
+        run: npm run linter
+
+      - name: test
+        run: npm run test
