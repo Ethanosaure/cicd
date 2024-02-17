@@ -1,0 +1,22 @@
+name: Deploy to github pages
+
+on:
+  pull_request:
+    branches: -main
+
+  push:
+    branches:
+      - dev
+
+jobs:
+  lint_and_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v4
+
+      - name: install Node version
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
