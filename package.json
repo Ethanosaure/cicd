@@ -4,7 +4,7 @@
     "dev:format": "prettier --write .",
     "test": "vitest",
     "dev:design": "npx tailwindcss -i ./public/style/style.css -o ./public/style/output.css",
-    "design": "npx tailwindcss -i ./public/style/style.css -o ./dist/public/style/output.css",
+    "prod:design": "npx tailwindcss -i ./public/style/style.css -o ./dist/public/style/output.css",
     "linter": "eslint --ignore-path .eslintignore --ext .js ."
   },
   "devDependencies": {

@@ -58,7 +58,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: tailwind
-        run: npm run design
+        run: npm run prod:design
 
       - name: copy index.html in dist
         run: cp index.html ./dist/
