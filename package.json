@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "dev:design": "npx tailwindcss -i ./src/style.css -o ./src/output.css --watch",
+    "dev:design-w": "npx tailwindcss -i .public/style/style.css -o .public/style/output.css --watch",
     "dev:format": "prettier --write .",
     "test": "vitest",
-    "design": "npx tailwindcss -i ./src/style.css -o dist/src/output.css",
+    "dev:design": "npx tailwindcss -i ./public/style/style.css -o ./public/style/output.css",
+    "prod:design": "npx tailwindcss -i ./public/style/style.css -o ./dist/public/style/output.css",
     "linter": "eslint --ignore-path .eslintignore --ext .js ."
   },
   "devDependencies": {

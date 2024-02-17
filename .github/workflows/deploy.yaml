@@ -9,6 +9,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   lint_and_tests:
     runs-on: ubuntu-latest
@@ -30,3 +35,42 @@ jobs:
 
       - name: test
         run: npm run test
+
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    needs: lint_and_tests
+
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - run: npm i
+
+      - name: configure GH pages
+        uses: actions/configure-pages@v3
+
+      - name: tailwind
+        run: npm run design
+
+      - name: copy index.html in dist
+        run: cp index.html ./dist/
+
+      - name: copy js folder in dist
+        run: cp -r ./public/src ./dist/public
+
+      - name: uploading artifacts
+        uses: actions/upload-pages-artifacts@v2
+        with:
+          path: ./dist/
+
+      - name: deploy to GH pages
+        uses: actions/deploy-pages@v1
+        id: deployment
